@@ -17,11 +17,11 @@ jobs:
             - name: Checkout repository
               uses: actions/checkout@v3
 
-            - name: Node.js setup
-              uses: actions/setup-node@v2
-              with:
-                  node-version: 16
-                  cache: 'npm'
+            # - name: Node.js setup
+            #   uses: actions/setup-node@v2
+            #   with:
+            #       node-version: 16
+            #       cache: 'npm'
 
             - name: Rust setup
               uses: actions-rs/toolchain@v1
@@ -34,8 +34,8 @@ jobs:
                   sudo apt-get update
                   sudo apt-get install -y libgtk-3-dev webkit2gtk-4.0 libappindicator3-dev librsvg2-dev patchelf
 
-            - name: Install app dependencies and build web
-              run: npm i && npm run build
+            # - name: Install app dependencies and build web
+            #   run: npm i && npm run build
 
             - name: Build the app
               uses: tauri-apps/tauri-action@v0
