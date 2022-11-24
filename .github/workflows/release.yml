@@ -37,6 +37,10 @@ jobs:
             # - name: Install app dependencies and build web
             #   run: npm i && npm run build
 
+            - name: Add aarch64 target
+              if: matrix.platform == 'macos-latest'
+              run: rustup target add aarch64-apple-darwin
+
             - name: Build the app (Apple Silicon)
               uses: solvedDev/tauri-action@dev
               if: matrix.platform == 'macos-latest'
