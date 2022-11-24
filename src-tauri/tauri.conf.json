@@ -8,7 +8,7 @@
 	},
 	"package": {
 		"productName": "bridge-test-app",
-		"version": "0.0.3"
+		"version": "0.0.5"
 	},
 	"tauri": {
 		"allowlist": {
@@ -54,7 +54,7 @@
 			"active": true,
 			"dialog": true,
 			"endpoints": [
-				"https://gist.githubusercontent.com/solvedDev/82e1ef85858629213a328bbfa1677b76/raw"
+				"https://github.com/solvedDev/bridge-test-app/releases/latest/download/latest.json"
 			],
 			"pubkey": "dW50cnVzdGVkIGNvbW1lbnQ6IG1pbmlzaWduIHB1YmxpYyBrZXk6IEFFNTY4RUFBOTcwNDRFNTIKUldSU1RnU1hxbzVXcnZCdlNLQzQrR1NhTVRaSTd1MWc0VnAyeXY0U0ZNUVRCTTFVM1hpb2MwaU8K"
 		},
