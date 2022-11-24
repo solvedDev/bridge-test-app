@@ -37,25 +37,25 @@ jobs:
             # - name: Install app dependencies and build web
             #   run: npm i && npm run build
 
-            - name: Add aarch64 target
-              if: matrix.platform == 'macos-latest'
-              run: rustup target add aarch64-apple-darwin
+            # - name: Add aarch64 target
+            #   if: matrix.platform == 'macos-latest'
+            #   run: rustup target add aarch64-apple-darwin
 
-            - name: Build the app (Apple Silicon)
-              uses: solvedDev/tauri-action@dev
-              if: matrix.platform == 'macos-latest'
+            # - name: Build the app (Apple Silicon)
+            #   uses: solvedDev/tauri-action@dev
+            #   if: matrix.platform == 'macos-latest'
 
-              env:
-                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-                  TAURI_PRIVATE_KEY: ${{ secrets.TAURI_PRIVATE_KEY }}
-                  TAURI_KEY_PASSWORD: ${{ secrets.TAURI_KEY_PASSWORD }}
+            #   env:
+            #       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+            #       TAURI_PRIVATE_KEY: ${{ secrets.TAURI_PRIVATE_KEY }}
+            #       TAURI_KEY_PASSWORD: ${{ secrets.TAURI_KEY_PASSWORD }}
 
-              with:
-                  tagName: v__VERSION__ # tauri-action replaces \_\_VERSION\_\_ with the app version
-                  releaseName: 'v__VERSION__'
-                  releaseDraft: true
-                  prerelease: false
-                  args: --target aarch64-apple-darwin
+            #   with:
+            #       tagName: v__VERSION__ # tauri-action replaces \_\_VERSION\_\_ with the app version
+            #       releaseName: 'v__VERSION__'
+            #       releaseDraft: true
+            #       prerelease: false
+            #       args: --target aarch64-apple-darwin
 
             - name: Build the app
               uses: solvedDev/tauri-action@dev
